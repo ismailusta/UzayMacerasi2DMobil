@@ -9,6 +9,8 @@ public class OyuncuHareketKontrol : MonoBehaviour
     [SerializeField] float hizlanma = default;
     [SerializeField] float yavaslama = default;
     [SerializeField] float ziplamaKuvvet = default;
+    [SerializeField] float anlikZiplamaSayisi = 0;
+    [SerializeField] float maxZiplamaSayisi = 2;
 
     Vector2 velocity;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,11 +60,19 @@ public class OyuncuHareketKontrol : MonoBehaviour
     }
     void ZiplamayaBasladiginda()
     {
-        _playerRigidbody.AddForce(Vector2.up * ziplamaKuvvet, ForceMode2D.Impulse);
-        _playerAnimator.SetBool("isJumping", true);
+        if (anlikZiplamaSayisi < maxZiplamaSayisi)
+        {
+            _playerRigidbody.AddForce(Vector2.up * ziplamaKuvvet, ForceMode2D.Impulse);
+            _playerAnimator.SetBool("isJumping", true);
+        }
     }
     void ZiplamaBittiginde()
     {
         _playerAnimator.SetBool("isJumping", false);
+        anlikZiplamaSayisi++;
+    }
+    public void ZiplamaSifirla()
+    {
+        anlikZiplamaSayisi = 0;
     }
 }

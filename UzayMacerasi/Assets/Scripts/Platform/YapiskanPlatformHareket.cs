@@ -44,4 +44,12 @@ public class YapiskanPlatformHareket : MonoBehaviour
         Vector2 pinpong = new Vector2(hareketYonX, transform.position.y);
         transform.position = pinpong;
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Ayak")
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.parent = transform;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<OyuncuHareketKontrol>().ZiplamaSifirla();
+        }
+    }
 }
