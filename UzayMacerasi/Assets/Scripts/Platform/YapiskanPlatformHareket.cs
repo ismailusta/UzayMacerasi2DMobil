@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlatformHareket : MonoBehaviour
+public class YapiskanPlatformHareket : MonoBehaviour
 {
     PolygonCollider2D _polygonCollider2D;
     bool hareketEdiyorMu; // deneme için
@@ -12,7 +12,6 @@ public class PlatformHareket : MonoBehaviour
         set => hareketEdiyorMu = value;
     }
     float min, max;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

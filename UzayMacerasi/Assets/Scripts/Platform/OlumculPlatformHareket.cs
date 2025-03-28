@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlatformHareket : MonoBehaviour
+public class OlumculPlatformHareket : MonoBehaviour
 {
     PolygonCollider2D _polygonCollider2D;
     bool hareketEdiyorMu; // deneme için
@@ -45,4 +45,5 @@ public class PlatformHareket : MonoBehaviour
         Vector2 pinpong = new Vector2(hareketYonX, transform.position.y);
         transform.position = pinpong;
     }
+
 }

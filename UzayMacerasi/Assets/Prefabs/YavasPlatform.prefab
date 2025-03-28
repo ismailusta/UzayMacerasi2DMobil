@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2795417822058433816}
   - component: {fileID: 3973120832459940844}
   - component: {fileID: 4629756563916249101}
+  - component: {fileID: 4095778850402104880}
   m_Layer: 0
   m_Name: YavasPlatform
   m_TagString: Untagged
@@ -211,3 +212,15 @@ PolygonCollider2D:
       - {x: -1.4823288, y: 0.67237073}
       - {x: -1.5851504, y: 0.71545875}
   m_UseDelaunayMesh: 0
+--- !u!114 &4095778850402104880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138936621937849211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c93b97b9831776944be77a80869bc1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

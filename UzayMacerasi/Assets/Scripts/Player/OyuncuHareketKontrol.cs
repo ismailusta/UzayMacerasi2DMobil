@@ -8,6 +8,7 @@ public class OyuncuHareketKontrol : MonoBehaviour
     [SerializeField] float hiz = default;
     [SerializeField] float hizlanma = default;
     [SerializeField] float yavaslama = default;
+    [SerializeField] float ziplamaKuvvet = default;
 
     Vector2 velocity;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,5 +46,23 @@ public class OyuncuHareketKontrol : MonoBehaviour
         }
         transform.Translate(velocity * Time.deltaTime);
         transform.localScale = scaleDeger;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            ZiplamayaBasladiginda();
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            ZiplamaBittiginde();
+        }
+    }
+    void ZiplamayaBasladiginda()
+    {
+        _playerRigidbody.AddForce(Vector2.up * ziplamaKuvvet, ForceMode2D.Impulse);
+        _playerAnimator.SetBool("isJumping", true);
+    }
+    void ZiplamaBittiginde()
+    {
+        _playerAnimator.SetBool("isJumping", false);
     }
 }

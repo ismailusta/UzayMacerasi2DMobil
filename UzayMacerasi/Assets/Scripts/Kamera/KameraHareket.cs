@@ -27,6 +27,5 @@ public class KameraHareket : MonoBehaviour
         transform.position += transform.up * hiz * Time.deltaTime;
         hiz += hizlanma * Time.deltaTime;
         if (hiz > maksimumHiz) { hiz = maksimumHiz; }
-        Debug.Log(hiz);
     }
 }
