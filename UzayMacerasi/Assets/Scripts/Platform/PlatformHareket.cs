@@ -12,7 +12,6 @@ public class PlatformHareket : MonoBehaviour
         set => hareketEdiyorMu = value;
     }
     float min, max;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,13 +23,12 @@ public class PlatformHareket : MonoBehaviour
             min = _polygonCollider2D.bounds.size.x / 2;
             max = EkranHesaplayicisi.instance.EkranGenisligi - _polygonCollider2D.bounds.size.x / 2;
         }
-        else// solda kalanlar ekranın ortaya bolümunde
+        else // solda kalanlar ekranın ortaya bolümunde
         {
             min = -EkranHesaplayicisi.instance.EkranGenisligi + _polygonCollider2D.bounds.size.x / 2;
             max = -_polygonCollider2D.bounds.size.x / 2;
         }
     }
-
     // Update is called once per frame
     void Update()
     {

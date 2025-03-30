@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - UI
   - Ayak
   - Buton
   layers:
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1008282731
+    locked: 0
+  - name: UI
+    uniqueID: 1463018375
     locked: 0
   m_RenderingLayers:
   - Default

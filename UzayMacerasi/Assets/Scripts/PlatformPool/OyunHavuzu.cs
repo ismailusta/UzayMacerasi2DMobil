@@ -33,6 +33,7 @@ public class OyunHavuzu : MonoBehaviour
         platformPosition = new Vector2(0, 0);
         playerPosition = new Vector2(0, 0.5f);
         GameObject player = Instantiate(_playerPrefab, playerPosition, Quaternion.identity);
+
         GameObject ilkPlatform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity);
         _platformsList.Add(ilkPlatform);
         ilkPlatform.GetComponent<PlatformHareket>().HareketEdiyorMu = false;
@@ -48,6 +49,10 @@ public class OyunHavuzu : MonoBehaviour
             GameObject platform = Instantiate(_platformPrefab, platformPosition, Quaternion.identity);
             _platformsList.Add(platform);
             platform.GetComponent<PlatformHareket>().HareketEdiyorMu = true;
+            if (i % 2 == 0)
+            {
+                platform.GetComponent<Altin>().AltinAc();
+            }
             PlatformYeriniDegis();
         }
         GameObject olumculPlatform = Instantiate(_olumculPlatformPrefab, platformPosition, Quaternion.identity);
@@ -66,6 +71,15 @@ public class OyunHavuzu : MonoBehaviour
             _platformsList[i + 5] = _platformsList[i];
             _platformsList[i] = _temp;
             _platformsList[i + 5].transform.position = platformPosition;
+            if (_platformsList[i + 5].tag == "Platform" || _platformsList[i + 5].tag == "YapiskanPlatform")
+            {
+                _platformsList[i + 5].GetComponent<Altin>().AltinKapat();
+                float rastgeleRandom = Random.Range(0f, 1f);
+                if (rastgeleRandom > 0.5f)
+                {
+                    _platformsList[i + 5].GetComponent<Altin>().AltinAc();
+                }
+            }
             PlatformYeriniDegis();
         }
 
