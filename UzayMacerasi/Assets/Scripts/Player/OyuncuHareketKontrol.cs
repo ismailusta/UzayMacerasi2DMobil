@@ -130,4 +130,8 @@ public class OyuncuHareketKontrol : MonoBehaviour
             FindFirstObjectByType<Olme>().Olunce();
         }
     }
+    public void OyunBittigindeKarakterDurumu()
+    {
+        Destroy(this.gameObject);
+    }
 }

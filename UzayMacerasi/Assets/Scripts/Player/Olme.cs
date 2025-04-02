@@ -17,6 +17,8 @@ public class Olme : MonoBehaviour
     public void Olunce()
     {
         uIKontrol.OyunBittiUI.SetActive(true);
+        FindFirstObjectByType<OyuncuHareketKontrol>().OyunBittigindeKarakterDurumu();
+        FindFirstObjectByType<KameraHareket>().HareketiDurdur();
         uIKontrol.UIKapat();
         _puanHesapla.OyunSonuDegerler();
     }

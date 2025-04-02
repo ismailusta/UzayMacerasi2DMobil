@@ -16,7 +16,20 @@ public class PlatformHareket : MonoBehaviour
     void Start()
     {
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
-        platformHareketHizRandom = Random.Range(0.5f, 1.0f);
+        if (SeceneklerGenel.KolayDegerAl() == 1)
+        {
+            platformHareketHizRandom = Random.Range(0.2f, 0.8f);
+
+        }
+        if (SeceneklerGenel.OrtaDegerAl() == 1)
+        {
+            platformHareketHizRandom = Random.Range(0.5f, 1.0f);
+
+        }
+        if (SeceneklerGenel.ZorDegerAl() == 1)
+        {
+            platformHareketHizRandom = Random.Range(0.8f, 1.5f);
+        }
         if (transform.position.x > 0) // sağda kalanlar ekranın ortaya bolümünde
         {
             // _polygonCollider2D.bounds.extends.x bu da aynı değeri veriyo
