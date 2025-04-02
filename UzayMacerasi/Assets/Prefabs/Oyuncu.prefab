@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 7193401874936731029}
   - component: {fileID: 6986633377780997046}
   - component: {fileID: 1285278765903483560}
+  - component: {fileID: 5215950463569971305}
   m_Layer: 0
   m_Name: Oyuncu
   m_TagString: Untagged
@@ -189,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1008282731
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 9fe66265479e1f24db2c809c3039beb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -313,3 +314,17 @@ MonoBehaviour:
   hizlanma: 10
   yavaslama: 50
   ziplamaKuvvet: 130
+  anlikZiplamaSayisi: 0
+  maxZiplamaSayisi: 2
+--- !u!114 &5215950463569971305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437060155427299813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3062c0eacd72eb249a57ec91174c1863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

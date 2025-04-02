@@ -7,6 +7,10 @@ TagManager:
   - UI
   - Ayak
   - Buton
+  - Platform
+  - OlumculPlatform
+  - YapiskanPlatform
+  - Olum
   layers:
   - Default
   - TransparentFX
@@ -46,6 +50,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 2363611541
+    locked: 0
+  - name: Altin
+    uniqueID: 547650131
     locked: 0
   - name: Player
     uniqueID: 1008282731
