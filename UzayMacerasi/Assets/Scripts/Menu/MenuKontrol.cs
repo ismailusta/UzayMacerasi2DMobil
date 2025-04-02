@@ -10,8 +10,6 @@ public class MenuKontrol : MonoBehaviour
     [SerializeField] Button _enYuksekSkorButton;
     [SerializeField] Button _ayarlarButton;
     [SerializeField] Button _muzikButton;
-
-    bool muzikAcikMi = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +17,15 @@ public class MenuKontrol : MonoBehaviour
         _enYuksekSkorButton.onClick.AddListener(() => EnYuksekSkor());
         _ayarlarButton.onClick.AddListener(() => Ayarlar());
         _muzikButton.onClick.AddListener(() => Muzik());
+        if (SeceneklerGenel.KayitVarmi() == false)
+        {
+            SeceneklerGenel.KolayDegerAta(1);
+        }
+        if (SeceneklerGenel.MuzikKayitVarmi() == false)
+        {
+            SeceneklerGenel.MuzikAktifDegerAta(1);
+        }
+        MuzikDenetle();
     }
 
     // Update is called once per frame
@@ -41,15 +48,27 @@ public class MenuKontrol : MonoBehaviour
     void Muzik()
     {
         Image varOlanResim = _muzikButton.GetComponent<Image>();
-        if (muzikAcikMi)
+        if (SeceneklerGenel.MuzikAktifDegerAl() == 1)
         {
-            muzikAcikMi = false;
+            SeceneklerGenel.MuzikAktifDegerAta(0);
             varOlanResim.sprite = _muzikResimleri[1];
         }
         else
         {
-            muzikAcikMi = true;
+            SeceneklerGenel.MuzikAktifDegerAta(1);
             varOlanResim.sprite = _muzikResimleri[0];
+        }
+    }
+    void MuzikDenetle()
+    {
+        Image varOlanResim = _muzikButton.GetComponent<Image>();
+        if (SeceneklerGenel.MuzikAktifDegerAl() == 1)
+        {
+            varOlanResim.sprite = _muzikResimleri[0];
+        }
+        if (SeceneklerGenel.MuzikAktifDegerAl() == 0)
+        {
+            varOlanResim.sprite = _muzikResimleri[1];
         }
     }
 }

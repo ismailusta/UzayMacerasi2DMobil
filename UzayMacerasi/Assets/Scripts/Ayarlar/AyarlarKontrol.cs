@@ -15,7 +15,24 @@ public class AyarlarKontrol : MonoBehaviour
         _kolayButton.onClick.AddListener(() => DenemeKolay());
         _ortaButton.onClick.AddListener(() => DenemeOrta());
         _zorButton.onClick.AddListener(() => DenemeZor());
-
+        if (SeceneklerGenel.KolayDegerAl() == 1)
+        {
+            _kolayButton.interactable = false;
+            _ortaButton.interactable = true;
+            _zorButton.interactable = true;
+        }
+        if (SeceneklerGenel.OrtaDegerAl() == 1)
+        {
+            _kolayButton.interactable = true;
+            _ortaButton.interactable = false;
+            _zorButton.interactable = true;
+        }
+        if (SeceneklerGenel.ZorDegerAl() == 1)
+        {
+            _kolayButton.interactable = true;
+            _ortaButton.interactable = true;
+            _zorButton.interactable = false;
+        }
     }
 
     // Update is called once per frame
@@ -32,16 +49,25 @@ public class AyarlarKontrol : MonoBehaviour
         switch (seviye)
         {
             case "Kolay":
+                SeceneklerGenel.KolayDegerAta(1);
+                SeceneklerGenel.OrtaDegerAta(0);
+                SeceneklerGenel.ZorDegerAta(0);
                 _kolayButton.interactable = false;
                 _ortaButton.interactable = true;
                 _zorButton.interactable = true;
                 break;
             case "Orta":
+                SeceneklerGenel.KolayDegerAta(0);
+                SeceneklerGenel.OrtaDegerAta(1);
+                SeceneklerGenel.ZorDegerAta(0);
                 _kolayButton.interactable = true;
                 _ortaButton.interactable = false;
                 _zorButton.interactable = true;
                 break;
             case "Zor":
+                SeceneklerGenel.KolayDegerAta(0);
+                SeceneklerGenel.OrtaDegerAta(0);
+                SeceneklerGenel.ZorDegerAta(1);
                 _kolayButton.interactable = true;
                 _ortaButton.interactable = true;
                 _zorButton.interactable = false;

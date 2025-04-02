@@ -847,6 +847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _geriDonButon: {fileID: 11483500}
+  _kolayButton: {fileID: 1971801135}
+  _ortaButton: {fileID: 203262930}
+  _zorButton: {fileID: 1730553088}
 --- !u!4 &1222392809
 Transform:
   m_ObjectHideFlags: 0
