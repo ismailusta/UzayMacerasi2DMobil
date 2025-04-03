@@ -8,6 +8,7 @@ public class ArkaPlanHareketKontrol : MonoBehaviour
     void Start()
     {
         arkaPlanKonumY = transform.position.y;
+        FindFirstObjectByType<GezegenKontrol>().GezegenYerlestir(arkaPlanKonumY);
     }
 
     // Update is called once per frame
@@ -22,6 +23,7 @@ public class ArkaPlanHareketKontrol : MonoBehaviour
     void ArkaPlanHareketEttir()
     {
         arkaPlanKonumY += mesafe * 2;
+        FindFirstObjectByType<GezegenKontrol>().GezegenYerlestir(arkaPlanKonumY);
         Vector2 newPos = new Vector2(0, arkaPlanKonumY);
         transform.position = newPos;
     }

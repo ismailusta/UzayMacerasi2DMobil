@@ -51,11 +51,13 @@ public class MenuKontrol : MonoBehaviour
         if (SeceneklerGenel.MuzikAktifDegerAl() == 1)
         {
             SeceneklerGenel.MuzikAktifDegerAta(0);
+            MuzikKontrol.instance.MuzikCalistir(false);
             varOlanResim.sprite = _muzikResimleri[1];
         }
         else
         {
             SeceneklerGenel.MuzikAktifDegerAta(1);
+            MuzikKontrol.instance.MuzikCalistir(true);
             varOlanResim.sprite = _muzikResimleri[0];
         }
     }
@@ -64,10 +66,12 @@ public class MenuKontrol : MonoBehaviour
         Image varOlanResim = _muzikButton.GetComponent<Image>();
         if (SeceneklerGenel.MuzikAktifDegerAl() == 1)
         {
+            MuzikKontrol.instance.MuzikCalistir(true);
             varOlanResim.sprite = _muzikResimleri[0];
         }
         if (SeceneklerGenel.MuzikAktifDegerAl() == 0)
         {
+            MuzikKontrol.instance.MuzikCalistir(false);
             varOlanResim.sprite = _muzikResimleri[1];
         }
     }
