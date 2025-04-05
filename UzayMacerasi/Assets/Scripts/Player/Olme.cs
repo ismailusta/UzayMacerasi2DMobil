@@ -16,6 +16,7 @@ public class Olme : MonoBehaviour
     }
     public void Olunce()
     {
+        FindFirstObjectByType<SesKontrol>().OyunBittiSesCal();
         uIKontrol.OyunBittiUI.SetActive(true);
         FindFirstObjectByType<OyuncuHareketKontrol>().OyunBittigindeKarakterDurumu();
         FindFirstObjectByType<KameraHareket>().HareketiDurdur();

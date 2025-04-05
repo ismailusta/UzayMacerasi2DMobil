@@ -190,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1008282731
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 9fe66265479e1f24db2c809c3039beb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -315,7 +315,7 @@ MonoBehaviour:
   yavaslama: 50
   ziplamaKuvvet: 130
   anlikZiplamaSayisi: 0
-  maxZiplamaSayisi: 2
+  maxZiplamaSayisi: 3
 --- !u!114 &5215950463569971305
 MonoBehaviour:
   m_ObjectHideFlags: 0

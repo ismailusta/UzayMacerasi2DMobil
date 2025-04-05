@@ -31,6 +31,7 @@ public class PuanHesapla : MonoBehaviour
     }
     public void AltinKazanildi()
     {
+        FindFirstObjectByType<SesKontrol>().AltinSesCal();
         altindegeri++;
         _altinPuan.text = "X" + altindegeri;
     }

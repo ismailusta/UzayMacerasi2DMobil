@@ -62,7 +62,9 @@ public class YapiskanPlatformHareket : MonoBehaviour
         if (other.tag == "Ayak")
         {
             GameObject.FindGameObjectWithTag("Player").transform.parent = transform;
+            FindFirstObjectByType<OyuncuHareketKontrol>().OyuncuYavasPlatformaBasinca();
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<OyuncuHareketKontrol>().ZiplamaSifirla();
         }
     }
+
 }

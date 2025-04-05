@@ -61,6 +61,7 @@ public class PlatformHareket : MonoBehaviour
         if (other.tag == "Ayak")
         {
             GameObject.FindGameObjectWithTag("Player").transform.parent = transform;
+            FindFirstObjectByType<OyuncuHareketKontrol>().OyuncuYavasPlatformdanCikinca();
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<OyuncuHareketKontrol>().ZiplamaSifirla();
         }
     }

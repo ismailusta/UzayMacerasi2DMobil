@@ -10,7 +10,7 @@ public class OyuncuHareketKontrol : MonoBehaviour
     [SerializeField] float yavaslama = default;
     [SerializeField] float ziplamaKuvvet = default;
     [SerializeField] int anlikZiplamaSayisi = 0;
-    [SerializeField] int maxZiplamaSayisi = 2;
+    [SerializeField] int maxZiplamaSayisi = 3;
     Joystick _joystick;
     ZiplaButonKontrol _ziplaButonKontrol;
     Vector2 velocity;
@@ -107,6 +107,7 @@ public class OyuncuHareketKontrol : MonoBehaviour
     {
         if (anlikZiplamaSayisi < maxZiplamaSayisi)
         {
+            FindFirstObjectByType<SesKontrol>().ZiplamaSesCal();
             _playerRigidbody.AddForce(Vector2.up * ziplamaKuvvet, ForceMode2D.Impulse);
             _playerAnimator.SetBool("isJumping", true);
             FindFirstObjectByType<SliderKontrol>().SliderDegerAyarla(maxZiplamaSayisi, anlikZiplamaSayisi);
@@ -129,6 +130,14 @@ public class OyuncuHareketKontrol : MonoBehaviour
         {
             FindFirstObjectByType<Olme>().Olunce();
         }
+    }
+    public void OyuncuYavasPlatformaBasinca()
+    {
+        _playerRigidbody.linearDamping = 8f;
+    }
+    public void OyuncuYavasPlatformdanCikinca()
+    {
+        _playerRigidbody.linearDamping = 4f;
     }
     public void OyunBittigindeKarakterDurumu()
     {

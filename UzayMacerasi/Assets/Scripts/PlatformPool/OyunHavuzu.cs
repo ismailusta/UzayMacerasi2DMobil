@@ -87,6 +87,12 @@ public class OyunHavuzu : MonoBehaviour
     void PlatformYeriniDegis()
     {
         platformPosition.y += _platformArasiMesafe;
+        SiraliYerDegis();
+        RandomYerDegis();
+
+    }
+    void RandomYerDegis()
+    {
         float randomKey = Random.Range(0f, 1f);
         if (randomKey < 0.5f)
         {
@@ -95,6 +101,20 @@ public class OyunHavuzu : MonoBehaviour
         else if (randomKey > 0.5f)
         {
             platformPosition.x = -EkranHesaplayicisi.instance.EkranGenisligi / 2;
+        }
+    }
+    bool yon = true;
+    void SiraliYerDegis()
+    {
+        if (yon)
+        {
+            platformPosition.x = EkranHesaplayicisi.instance.EkranGenisligi / 2;
+            yon = false;
+        }
+        else
+        {
+            platformPosition.x = -EkranHesaplayicisi.instance.EkranGenisligi / 2;
+            yon = true;
         }
     }
 }
